@@ -1,0 +1,27 @@
+#surefire
+#Mon Mar 16 20:46:44 CST 2015
+testClassesDirectory=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\target\\test-classes
+classPathUrl.2=C\:\\Users\\lixiaopeng\\.m2\\repository\\org\\apache\\struts\\struts2-spring-plugin\\2.3.4.1\\struts2-spring-plugin-2.3.4.1.jar
+useManifestOnlyJar=true
+classPathUrl.1=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\target\\classes
+reportsDirectory=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\target\\surefire-reports
+classPathUrl.0=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\target\\test-classes
+dirscanner.0=directoryScannerOptions
+providerConfiguration=org.apache.maven.surefire.junit.JUnit3Provider
+testSuiteDefinitionTestSourceDirectory=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\src\\test\\java
+surefireClassPathUrl.1=C\:\\Users\\lixiaopeng\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-api\\2.7.1\\surefire-api-2.7.1.jar
+surefireClassPathUrl.0=C\:\\Users\\lixiaopeng\\.m2\\repository\\org\\apache\\maven\\surefire\\surefire-junit3\\2.7.1\\surefire-junit3-2.7.1.jar
+report.2=org.apache.maven.surefire.report.XMLReporter
+useSystemClassLoader=true
+report.1=org.apache.maven.surefire.report.BriefFileReporter
+report.0=org.apache.maven.surefire.report.ForkingConsoleReporter
+excludes0=**/*$*
+isTrimStackTrace=true
+dirscanner.0.params=E\:\\myeclipse10.0\\myeclipse.10\\myeclipse\\MyEclipse 10\\workspace\\maven-parent\\maven-service\\target\\test-classes|[**/Test*.java, **/*Test.java, **/*TestCase.java]|[**/*$*]
+enableAssertions=true
+includes2=**/*TestCase.java
+failIfNoTests=false
+includes1=**/*Test.java
+dirscanner.0.types=java.io.File|java.util.ArrayList|java.util.ArrayList
+includes0=**/Test*.java
+childDelegation=false
