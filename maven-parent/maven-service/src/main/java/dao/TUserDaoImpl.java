@@ -1,30 +1,19 @@
 package dao;
 
-import java.util.List;
-
-import javax.annotation.Resource;
-import javax.annotation.Resources;
-
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import model.TUser;
 
+@SuppressWarnings({ "hiding", "rawtypes" })
 @Repository
-public class TUserDaoImpl extends HibernateDaoSupport implements IUserDao {
+public class TUserDaoImpl<TUser,Integer> extends BaseDaoImpl implements IUserDao<TUser,Integer> {
 
-	@Resource
-	public void setMySessionFactory(SessionFactory sessionFactory){
-		super.setSessionFactory(sessionFactory);
-	}
 	
 	
-	@Override
-	public List<TUser> getUser() {
-		String hql = "from TUser";
-		return this.getHibernateTemplate().find(hql);
-	}
+//	@Override
+//	public List<TUser> getUser() {
+//		String hql = "from TUser";
+//		return this.getHibernateTemplate().find(hql);
+//	}
 
 }

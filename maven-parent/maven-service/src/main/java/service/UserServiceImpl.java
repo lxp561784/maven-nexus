@@ -13,11 +13,11 @@ import model.TUser;
 public class UserServiceImpl implements IUserService {
 
 	@Autowired
-	private IUserDao tUserDaoImpl; 
+	private IUserDao<TUser,Integer> tUserDaoImpl; 
 	
 	@Override
 	public List<TUser> getUser() {
-		return tUserDaoImpl.getUser();
+		return tUserDaoImpl.getAll();
 	}
 
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import model.TUser;
 
-public interface IUserDao {
+public interface IUserDao<T,Integer> extends BaseDao {
 
-	public List<TUser> getUser();
 }

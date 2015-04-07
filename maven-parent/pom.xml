@@ -10,6 +10,10 @@
   	<module>maven-service</module>
   	<module>maven-web</module>
   </modules>
+  
+  <properties>
+  	<project.install.phase>product</project.install.phase>
+  </properties>
 
 	<distributionManagement>
 		<repository>
@@ -51,4 +55,5 @@
 		</dependency>
   	</dependencies>
   </dependencyManagement>
+  
 </project>

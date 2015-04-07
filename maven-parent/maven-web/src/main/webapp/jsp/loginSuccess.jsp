@@ -7,6 +7,6 @@
 <head>
 </head>
 <body>
-	springmvc
+	springmvc    ${prop['hibernate.dialect'] }
 </body>
 </html>

@@ -13,13 +13,13 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 		<!-- 引入项目配置文件 -->
 		<!-- <context:property-placeholder location="classpath:jdbc.properties" /> -->
-		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-			<property name="locations">
+		<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+ 			<property name="locations"> 
 				<list>
-					<value>classpath:jdbc.properties</value>
-				</list>
-			</property>
-		</bean>
+					<value>classpath:jdbc.properties</value> 
+				</list> 
+			</property> 
+		</bean> 
 		<!-- JNDI方式配置数据源 -->
 		<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> <property name="jndiName" value="${jndiName}"></property> </bean> -->
 	

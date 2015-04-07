@@ -125,10 +125,6 @@
 			<version>${spring.version}</version>
 		</dependency>
 	<!-- spring data access spring和hibernate整合需要 -->
-	
-		
-		
-		
 		<!-- jdbc driver -->
 		<dependency>
 			<groupId>${jdbc.driver.groupId}</groupId>
@@ -144,6 +140,66 @@
 		</dependency>
 		<!-- datasource -->
   </dependencies>
-  
-  <build/>
+  	<build>
+        <plugins>
+        	 <plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+        </plugins>
+        <resources>
+	  		<resource>
+	  			<directory>src/main/resources</directory>
+	  			<filtering>false</filtering>
+	  		</resource>
+  		</resources>
+     </build>
+     <!-- 
+     <profiles>
+      自动根据JVM参数启用profile，替换不同环境的资源 mvn -Pproduct -Dproject.install.phase=product 
+     	<profile>
+     		<id>product</id>
+     		 <activation> 
+                 <property> 
+                    <name>project.install.phase</name> 
+                </property> 
+             </activation> 
+     		<build>
+					<resources>
+						<resource>
+							<directory>src/main/resources</directory>
+							 properties 和xml可以使用${}获取系统属性和项目属性值。还可以获取filters中添加的properties中的值。如下面
+							<filtering>true</filtering>
+						</resource>
+					</resources>
+					<filters>
+					 把jdbc.properties加入到项目属性中 spring。xml配置中可以获取到jdbc属性
+				       	<filter>
+				       		config/${project.install.phase}/jdbc.properties
+				       	</filter>
+					</filters>
+				</build>
+				 在properties中可以使用${dev.mode}获取值
+				<properties>
+			        <dev.mode>true</dev.mode>
+			        <env.spring.application.file>
+			            classpath*:/application.local.properties
+			        </env.spring.application.file>
+			    </properties>
+			    
+     	</profile>
+     </profiles>
+     -->
 </project>

@@ -21,10 +21,18 @@
     
     <load-on-startup>1</load-on-startup>
 </servlet>
- 
 <servlet-mapping>
     <servlet-name>spring</servlet-name>
     <url-pattern>*.do</url-pattern>
 </servlet-mapping>
-  
+<!-- 启动读取property文件到servletContext中 -->
+<servlet>
+	<servlet-name>propertyServlet</servlet-name>
+	<servlet-class>servlet.PropertiesServlet</servlet-class>
+	<load-on-startup>2</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>propertyServlet</servlet-name>
+	<url-pattern>/propertyServlet</url-pattern>
+</servlet-mapping>
 </web-app>
