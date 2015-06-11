@@ -168,6 +168,10 @@
 	            <id>dev</id>
 	            <activation>
 	                <activeByDefault>true</activeByDefault>
+	                 <property>
+                    		<name>config</name>
+                    		<value>dev</value>
+                	</property>
 	            </activation>
 	            <build>
 	                <resources>
