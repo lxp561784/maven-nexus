@@ -94,8 +94,9 @@
 			
 		<!-- spring basic end -->
   </dependencies>
-  	<build>
-        <plugins>
+  	
+	<build>
+            <plugins>
         		<!-- 添加此插件以便启动jetty -->
 			<plugin>
 				<groupId>org.mortbay.jetty</groupId>
@@ -142,17 +143,8 @@
 			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.12</version>
+                <version>2.12.4</version>
                 <configuration>
                     <skipTests>false</skipTests>
                     <includes>
@@ -179,8 +171,8 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.5</version>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.2</version>
 					<configuration>
 						<encoding>UTF-8</encoding>
 					</configuration>
@@ -189,24 +181,22 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
-					<configuration>
-						<encoding>UTF-8</encoding>
-					</configuration>
+					<version>2.5.1</version>
 				</plugin>
         </plugins>
+        <!--资源过滤 --  通过profile中env的值加载不同环境的properties文件，在打包的时候把文件中的属性，过滤src/main/resource下xml中${}站位 -->
+        <filters>
+        	<filter>config/${env}/test.properties</filter>  
+        </filters>
         <resources>
 	  		<resource>
 	  			<directory>src/main/resources</directory>
-	  			<filtering>false</filtering>
+	  			<filtering>true</filtering>
 	  		</resource>
   		</resources>
         	
     </build>
-    
-    <!-- 在打包的时候   传入激活-P replace-resources profile 使用下面配置打包。  传入 -Dconfig=product 参数
-    	把config/product加到war中，
-    -->
+	 
      <profiles>
 	     <profile>
 	            <id>dev</id>
@@ -226,6 +216,9 @@
 	                	</resource>
 	                </resources>
 	            </build>
+	            <properties>
+	            	<env>dev</env>
+	            </properties>
 	        </profile>
      	  <!-- 自动根据JVM参数启用profile，替换不同环境的资源 mvn -Pproduct -Dconfig=product -->
         <profile>
@@ -245,6 +238,10 @@
                 	</resource>
                 </resources>
             </build>
+             <properties>
+	            	<env>dev</env>
+	            </properties>
         </profile>
      </profiles> 
+	
 </project>
