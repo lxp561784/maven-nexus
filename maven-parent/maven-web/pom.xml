@@ -174,7 +174,9 @@
 					<artifactId>maven-war-plugin</artifactId>
 					<version>2.2</version>
 					<configuration>
+						<!--把打好的war包放到指定目录-->
 						<encoding>UTF-8</encoding>
+						<outputDirectory>${basedir}/dev/</outputDirectory>
 					</configuration>
 				</plugin>
 				
